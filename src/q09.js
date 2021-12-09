@@ -50,12 +50,12 @@ const getAdjacentCoords = (coord, dimensions) => {
   return [left, right, up, down].filter(x => inBoundary(x, dimensions))
 }
 
-const getValues =  (data, coords) => {
- return coords.map(([row, col]) => data[row][col])
+const getValues = (data, coords) => {
+  return coords.map(([row, col]) => data[row][col])
 }
 
 const sumRiskLevel = (lowPoints) => {
-  return lowPoints.reduce((a, c) => a+c+1, 0)
+  return lowPoints.reduce((a, c) => a + c + 1, 0)
 }
 
 const scoutBasin = (data, coord, basin = []) => {
@@ -65,7 +65,7 @@ const scoutBasin = (data, coord, basin = []) => {
   const exist = basin.find(([r, c]) => r === row && c === col)
 
   if (inBoundary(coord, dim) && !exist) {
-    
+
     const curVal = data[row][col]
 
     if (curVal < 9) {
@@ -78,7 +78,7 @@ const scoutBasin = (data, coord, basin = []) => {
       })
     }
   }
-  
+
   return basin
 }
 
@@ -122,8 +122,8 @@ const q2runner = (data) => {
     .map(lpCoord => scoutBasin(data, lpCoord))
     .map(vals => getValues(data, vals))
 
-  const basinLengths = basins.map(x => x.length).sort((a,b) => b - a)
+  const basinLengths = basins.map(x => x.length).sort((a, b) => b - a)
   const topThree = basinLengths.slice(0, 3)
 
-  return topThree.reduce((a,c) => a * c, 1)
+  return topThree.reduce((a, c) => a * c, 1)
 }
