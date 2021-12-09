@@ -13,13 +13,13 @@ Here are a few tips:
 
 const fs = require('fs')
 
-const [runner, dataFileName] = require('./q09')
+const [runner, dataFileName] = require('./src/q09')
 
 /*
 Place your question data into the data.txt file.
 You may need to parse the data!
 */
-const data = fs.readFileSync(dataFileName, 'utf8')
+const data = fs.readFileSync(`./data/${dataFileName}`, 'utf8')
 
 console.time("Elapsed time")
 
