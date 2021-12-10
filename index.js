@@ -13,7 +13,7 @@ Here are a few tips:
 
 const fs = require('fs')
 
-const [runner, dataFileName] = require('./src/q09')
+const [runner, dataFileName] = require('./src/q10')
 
 /*
 Place your question data into the data.txt file.

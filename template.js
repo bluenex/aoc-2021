@@ -1,7 +1,8 @@
-const sample = ``
+let sample
+sample = ``
 
 const runner = (data) => {
-  const parsed = data.trim()
+  const parsed = (sample || data).trim()
 
   console.log({ parsed })
 
@@ -12,7 +13,7 @@ const runner = (data) => {
   console.log({ q1, q2 })
 }
 
-module.exports = [runner, 'q0x.txt']
+module.exports = [runner, 'qxx.txt']
 
 // -- constants
 // -- functions
