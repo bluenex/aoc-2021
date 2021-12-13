@@ -1,14 +1,14 @@
 let sample
-// sample = `[({(<(())[]>[[{[]{<()<>>
-// [(()[<>])]({[<{<<[]>>(
-// {([(<{}[<>[]}>{[]{[(<()>
-// (((({<>}<{<{<>}{[]{[]{}
-// [[<[([]))<([[{}[[()]]]
-// [{[{({}]{}}([{[{{{}}([]
-// {<[[]]>}<{[{[{[]{()[[[]
-// [<(<(<(<{}))><([]([]()
-// <{([([[(<>()){}]>(<<{{
-// <{([{{}}[<[[[<>{}]]]>[]]`
+sample = `[({(<(())[]>[[{[]{<()<>>
+[(()[<>])]({[<{<<[]>>(
+{([(<{}[<>[]}>{[]{[(<()>
+(((({<>}<{<{<>}{[]{[]{}
+[[<[([]))<([[{}[[()]]]
+[{[{({}]{}}([{[{{{}}([]
+{<[[]]>}<{[{[{[]{()[[[]
+[<(<(<(<{}))><([]([]()
+<{([([[(<>()){}]>(<<{{
+<{([{{}}[<[[[<>{}]]]>[]]`
 
 const runner = (data) => {
   const parsed = (sample || data).trim().split('\n')
@@ -112,7 +112,7 @@ const q1runner = (data) => {
   const illegalChecked = data.map(x => isIllegal(x))
   const illegalChars = illegalChecked.map(x => x.firstIllegalChar).filter(x => x)
 
-  // console.log({ illegalChecked })
+  console.log({ illegalChecked })
 
   return illegalChars.reduce((a,c) => a + corruptedScore[c], 0)
 }
